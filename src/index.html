@@ -35,25 +35,28 @@
 
 
 						<div>
+							<form action="upload.php" method="POST" enctype="multipart/form-data">
 							<span class="icon fa-camera"></span>
 							<h3>UPLOAD</h3>
-							<label for="imageUpload" class="button">Upload Image</label>
-							<input type="file" id="imageUpload" accept="image/" style="display: none">
+							<label for="image" class="button">Upload Image</label>
+							<input type="file" id="image" accept="image/" style="display: none">
 							<p>Upload your image here</p>
-						</div>
 
-						<div>
-							<span class="icon fa-file-word-o"></span>
-							<h3>SUBMIT</h3>
-							<form action="upload.php" method="POST" enctype="multipart/form-data">
-								<input type="file" name="image" />
+							<span class="icon fa-bug"></span>
+							<h3>Choose & Submit</h3>
+							<select name="language">
+							<option value="eng">Select Language</option>
+							<option value="eng">English</option>
+							<option value="hin">Hindi</option>
+							<option value="pan">Punjabi</option>
+							<option value="tel">Telgu</option>
+							</select>
+
+							<input type="file" name="image" />
 							<input type="submit" />
 							<p>Click submit to convert to text</p>
-							<select>
-  						<option value="eng">Select Language</option>
-							<option value="eng">English</option>
-  						<option value="hin">Hindi</option>
-						</select>
+
+
 						</form>
 
 						</div>
