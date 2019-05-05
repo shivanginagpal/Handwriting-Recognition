@@ -26,17 +26,24 @@
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
       </div>
     </header>
-
+<section id="banner">
+</section>
 <section id="three" class="wrapper align-center">
 <?php
+
       if(isset($_FILES['image'])){
       $file_name = $_FILES['image']['name'];
       $file_tmp =$_FILES['image']['tmp_name'];
+      $selected_lang = $_POST['language'];
       move_uploaded_file($file_tmp,"images/".$file_name);
+
       echo "<h3>Image Upload Success</h3>";
       echo '<img src="images/'.$file_name.'" style="width:30%">';
 
-      shell_exec('"/usr/bin/tesseract" "/var/www/html/images/'.$file_name.'" out -l hin');
+
+      echo $selected_lang;
+
+      shell_exec('"/usr/bin/tesseract" "/var/www/html/images/'.$file_name.'" out -l $selected_lang');
 
       shell_exec('vim out.txt -c "hardcopy > out.ps | q"; ps2pdf out.ps');
 
