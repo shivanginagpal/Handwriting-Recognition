@@ -20,13 +20,14 @@
       <div class="inner">
       <a href="index.html" class=" logo button special big">Home</a>
          <nav id="nav">
-          <a href="generic.html">About</a>
-          <a href="elements.html">Contact us</a>
+          <a href="About.html">About</a>
+          <a href="Contact_us.html">Contact Us</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
       </div>
     </header>
 <section id="banner">
+
 </section>
 <section id="three" class="wrapper align-center">
 <?php
@@ -36,34 +37,60 @@
       $file_tmp =$_FILES['image']['tmp_name'];
       $selected_lang = $_POST['language'];
       move_uploaded_file($file_tmp,"images/".$file_name);
+      shell_exec('"/usr/bin/python3" adaptive.py /var/www/html/images/'.$file_name.' 2>&1');
 
-      echo "<h3>Image Upload Success</h3>";
-      echo '<img src="images/'.$file_name.'" style="width:30%">';
-
-
-      echo $selected_lang;
-
-      shell_exec('"/usr/bin/tesseract" "/var/www/html/images/'.$file_name.'" out -l $selected_lang');
-
+      shell_exec('"/usr/bin/tesseract" clearimage.png out -l '.$selected_lang.' 2>&1');
+      //shell_exec('"/usr/bin/tesseract" "/var/www/html/images/'.$file_name.'" out -l '.$selected_lang.' 2>&1');
       shell_exec('vim out.txt -c "hardcopy > out.ps | q"; ps2pdf out.ps');
-
-      echo "<br><h3>OCR after reading</h3><br><pre>";
-
-      $myfile = fopen("out.txt", "r") or die("Unable to open file!");
-      echo fread($myfile,filesize("out.txt"));
-      fclose($myfile);
-      echo "</pre>";
       }
 ?>
+      <section id="three" class="wrapper align-center" >
+				<div class="inner" >
+          <div class="flex">
+					<div class="flex flex-2" >
+			<article >
+      <?php
+      echo "<h3>Image Upload Success</h3>";
+      echo '<img src="images/'.$file_name.'" style="width:75%">';
+      ?>
+      </article>
+
+      <article>
+        <div style="width:60%">
+      <?php
+      echo "<h3>OCR after reading</h3>";
+      $myfile = fopen("out.txt", "r") or die("Unable to open file!");
+      ?>
+    <p>
+      <?php
+    echo fread($myfile,filesize("out.txt"));
+      fclose($myfile);
+      ?>
+    </p>
+</div>
 
 
-<a href="out.txt" download><button class="button">Download</button></a>
-<br>
-<a href="out.pdf" download><button class="button">Download as pdf</button></a>
-<br>
+
+      </article>
+  <br>
+
+
+
+<a href="out.txt" download><button  class="icon fa-file-text-o"  style="font-size:16px" class="button">Download as Text</button></a>
+
+
+<a href="out.pdf" download><button class="icon fa-file-pdf-o" style="font-size:16px" class="button">Download as pdf</button></a>
+
+
 <form action="upload.php" method="POST" enctype="multipart/form-data">
+
 <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Upload To Google Drives"/>
+
 </form>
+
+</div>
+</div>
+</div>
 </section>
 </body>
 </html>
