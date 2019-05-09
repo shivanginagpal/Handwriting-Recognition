@@ -1,8 +1,8 @@
 <?php
     require_once "config.php";
-    if (isset($_SESSION['access_token'])) {
+/*    if (isset($_SESSION['access_token'])) {
 		exit();
-	}
+	}*/
     $loginURL = $gClient->createAuthUrl();
 
  ?>
@@ -50,7 +50,7 @@
 					<div class="flex flex-2" >
 			<article >
       <?php
-      echo "<h3>Image Upload Success</h3>";
+      echo "<h3>Uploaded Image</h3>";
       echo '<img src="images/'.$file_name.'" style="width:75%">';
       ?>
       </article>
@@ -58,7 +58,7 @@
       <article>
         <div style="width:60%">
       <?php
-      echo "<h3>OCR after reading</h3>";
+      echo "<h3>Output Text</h3>";
       $myfile = fopen("out.txt", "r") or die("Unable to open file!");
       ?>
     <p>
@@ -67,9 +67,7 @@
       fclose($myfile);
       ?>
     </p>
-</div>
-
-
+  </div>
 
       </article>
   <br>
