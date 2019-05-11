@@ -12,3 +12,15 @@ Final application lets user to download the file as text or pdf, also letting th
 * The existing model  has been trained on about 400000 textlines spanning about 4500 fonts.
 
 * Tesseract uses LSTM Neural Network.
+
+
+# Limitations
+
+* Recognition of handwritten text in english does not works very well for cursive Handwriting. 
+* Accuracy not so good for handwritten text in languages other than english.
+
+
+# Results
+* Image Pre-processing significantly improved image quality(for images with shadow) and O/P for tesseract.
+* Interpreted handwritten text for english language for non-connected text with an accuracy of more than 85%.
+* Interpreted printed text for other languages(Hindi, Punjabi, Telugu) with almost 100 % accuracy.
