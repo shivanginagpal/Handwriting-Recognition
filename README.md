@@ -24,3 +24,22 @@ Final application lets user to download the file as text or pdf, also letting th
 * Image Pre-processing significantly improved image quality(for images with shadow) and O/P for tesseract.
 * Interpreted handwritten text for english language for non-connected text with an accuracy of more than 85%.
 * Interpreted printed text for other languages(Hindi, Punjabi, Telugu) with almost 100 % accuracy.
+
+
+## Use Cases
+* Students in School/College can scan handwritten notes and edit to add or correct information and finally store it in Cloud as an ebook to be accessible from anywhere
+* Tourists/Journalists can take picture of the information about the place they visit and can edit later to write a story or an article
+* Companies can eliminate manual entry of Invoices, Purchase Orders or Financial  information into existing systems helps in reducing time and effort 
+* Employee Travel receipts for reimbursements
+Scan household or grocery receipts for budget planning
+* Hotels can scan the identity of the guest instead of the manual entry at the check-in
+
+
+## Future Enhancements
+
+* Improve the accuracy of the text being converted
+* Additional Language support 
+* Mobile/Smart Phone App  
+* Additional Image input formats
+* Highly Scalable architecture based on the usage  
+
