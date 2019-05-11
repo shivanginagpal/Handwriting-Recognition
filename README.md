@@ -3,7 +3,7 @@ Title : Handwriting Recognition
 This application is intended to provide web based GUI, using which one can convert their handwritten notes to electronic files. Filtering techniques are used to pre-process the image before it is fed to the tesseract OCR engine. The tesseract engine converts the image to electronic text file.
 Final application lets user to download the file as text or pdf, also letting the user to upload the text file directly to their Google drive.
 
-# Tesseract OCR Engine Tool
+## Tesseract OCR Engine Tool
 
 * Tesseract is an open source text recognizer (OCR) Engine, available under the Apache 2.0 license.
 
@@ -14,13 +14,13 @@ Final application lets user to download the file as text or pdf, also letting th
 * Tesseract uses LSTM Neural Network.
 
 
-# Limitations
+## Limitations
 
 * Recognition of handwritten text in english does not works very well for cursive Handwriting. 
 * Accuracy not so good for handwritten text in languages other than english.
 
 
-# Results
+## Results
 * Image Pre-processing significantly improved image quality(for images with shadow) and O/P for tesseract.
 * Interpreted handwritten text for english language for non-connected text with an accuracy of more than 85%.
 * Interpreted printed text for other languages(Hindi, Punjabi, Telugu) with almost 100 % accuracy.
