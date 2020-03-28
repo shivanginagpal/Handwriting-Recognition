@@ -1,8 +1,3 @@
-# Project-Group-14
- * Rakesh Amireddy
- * Shivangi Nagpal
- * Surya katari
- * Mahesh Reddy
 # Title : Handwriting Recognition
 This application is intended to provide web based GUI, using which one can convert their handwritten notes to electronic files. Filtering techniques are used to pre-process the image before it is fed to the tesseract OCR engine. The tesseract engine converts the image to electronic text file.
 Final application lets user to download the file as text or pdf, also letting the user to upload the text file directly to their Google drive.
@@ -46,4 +41,10 @@ Scan household or grocery receipts for budget planning
 * Mobile/Smart Phone App  
 * Additional Image input formats
 * Highly Scalable architecture based on the usage  
+
+## Contributors
+ * Rakesh Amireddy
+ * Shivangi Nagpal
+ * Surya katari
+ * Mahesh Reddy
 
